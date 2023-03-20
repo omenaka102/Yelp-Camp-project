@@ -16,7 +16,16 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index")
 
-mongoose.connect("mongodb://localhost/yelp_camp_v3");
+// mongoose.connect("mongodb://localhost/yelp_camp_v3");
+
+mongoose.connect("mongodb+srv://omenaka102:Godisking12345@cluster0.vq7tj.mongodb.net/campDB", {
+    useNewUrlParser: true
+}).then(() => {
+    console.log("connected to DB!");
+}).catch(err => {
+    console.log("ERROR:", err.message);
+});
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));

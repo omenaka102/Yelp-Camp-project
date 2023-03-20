@@ -1,0 +1,4 @@
+CODE NEEDED TO SOLVE ERROR FOR THE LF AND CRLF ISSUE
+    (Note: The code below works for only windows)
+
+git config --global core.autocrlf true
