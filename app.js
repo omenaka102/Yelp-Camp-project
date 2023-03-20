@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 var express         = require("express"),
     app             = express(),
     bodyParser      = require("body-parser"),
@@ -18,7 +20,8 @@ var commentRoutes = require("./routes/comments"),
 
 // mongoose.connect("mongodb://localhost/yelp_camp_v3");
 
-mongoose.connect("mongodb+srv://omenaka102:Godisking12345@cluster0.vq7tj.mongodb.net/campDB", {
+
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true
 }).then(() => {
     console.log("connected to DB!");
